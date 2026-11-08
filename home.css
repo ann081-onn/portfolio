@@ -323,3 +323,30 @@ body {
     font-size: 18px;
   }
 }
+@media (max-width: 768px){
+
+  .content{
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .hero{
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .profile-text,
+  .contact-text{
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+}
+@media (max-width: 768px){
+
+  .work-item{
+    width: calc(100% - 20px);
+    box-sizing: border-box;
+  }
+
+}
