@@ -1,0 +1,249 @@
+/* HP のレイアウトをトップページの中央寄せから解除 */
+body {
+  display: block !important;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+/* 左右のアイコン配置 */
+.header-icons {
+  position: fixed;
+  top: 20px;
+  left: 0;
+  right: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  z-index: 300;
+}
+
+.back-arrow {
+  margin-left: 100px;
+  font-size: 50px;
+  cursor: pointer;
+  user-select: none;
+  color: #c62828;
+  transition: opacity 0.2s ease;
+}
+
+.hamburger {
+  margin-right: 100px;
+  width: 50px;
+  height: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.hamburger span {
+  display: block;
+  height: 4px;
+  background: #c62828;
+  border-radius: 2px;
+  transition: 0.3s ease;
+}
+
+/* メニュー */
+.menu {
+  position: fixed;
+  top: 0;
+  right: -250px;
+  width: 250px;
+  height: 100vh;
+  background: #fff4f4;
+  box-shadow: -4px 0 10px rgba(0,0,0,0.1);
+  transition: right 0.4s ease;
+  padding-top: 80px;
+  z-index: 9999;
+}
+
+.menu.open {
+  right: 0;
+}
+
+.menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu li {
+  margin: 20px 0;
+  text-align: center;
+}
+
+.menu a {
+  text-decoration: none;
+  color: #c62828;
+  font-size: 20px;
+}
+
+/* メインコンテンツ */
+.content {
+  padding-top: 0px;
+  text-align: center;
+}
+
+.profile-image{
+    text-align: center;
+    margin: 50px 0 50px;
+}
+
+.profile-image img{
+    width: 250px;
+    max-width: 80%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* ===== Hero ===== */
+.hero {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  text-align: center;
+  animation: fadeIn 1.2s ease forwards;
+}
+
+.hero-title{
+  font-size: 48px;
+  font-weight: bold;
+  color: #c62828;
+
+  margin-top: 20px;
+  margin-bottom: 20px;
+
+  opacity: 0;
+  animation: slideUp 1s ease forwards;
+}
+
+.hero-copy {
+  font-size: 20px;
+  line-height: 1.8;
+  color: #444;
+  opacity: 0;
+  animation: fadeIn 1.5s ease forwards;
+  animation-delay: 0.3s;
+}
+
+/* アニメーション */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== Section 共通 ===== */
+.section-title {
+  font-size: 48px;
+  color: #c62828;
+  margin: 200px 0 50px;
+  text-align: center;
+  animation: fadeIn 1s ease forwards;
+}
+
+/* ===== Profile ===== */
+.profile-text {
+  font-size: 18px;
+  line-height: 1.8;
+  color: #444;
+  text-align: left;
+  max-width: 700px;
+  margin: 0 auto;
+  animation: fadeIn 1.2s ease forwards;
+}
+
+/* ===== Works ===== */
+.works {
+  margin-top: 40px;
+}
+
+.work-item {
+  background: #fff4f4;
+  border-radius: 12px;
+  padding: 30px;
+  margin: 20px auto;
+  max-width: 700px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  animation: fadeIn 1.2s ease forwards;
+}
+
+.work-title {
+  font-size: 24px;
+  color: #c62828;
+  margin-bottom: 10px;
+}
+
+.work-desc {
+  font-size: 18px;
+  color: #555;
+  line-height: 1.7;
+}
+
+/* ===== Contact ===== */
+.contact-text {
+  font-size: 18px;
+  line-height: 1.8;
+  color: #444;
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 300px; /* ← ここだけで余白を管理 */
+  animation: fadeIn 1.2s ease forwards;
+}
+
+
+/* ===== fadein ===== */
+.fadein {
+  opacity: 0;
+  transform: translateY(0); /* ← 余白が潰れない */
+  transition: all 0.8s ease;
+}
+
+.fadein.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== iframe ===== */
+.iframe-wrap {
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto 20px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  animation: fadeIn 1.2s ease forwards;
+  position: relative;
+}
+
+.work-iframe {
+  width: 100%;
+  height: 420px;
+  border: none;
+  transform: scale(1);
+  transition: transform 0.4s ease;
+}
+
+.iframe-wrap:hover .work-iframe {
+  transform: scale(1.02);
+}
+
+.iframe-link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  display: block;
+}
+
+
+.bottom-space {
+  height: 50%; /* ← 好きな余白に調整 */
+}

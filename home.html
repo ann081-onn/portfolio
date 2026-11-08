@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anon' Portfolio</title>
+
+  <!-- 共通CSS -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- HP専用CSS -->
+  <link rel="stylesheet" href="home.css">
+</head>
+<body>
+
+  <!-- 左上：トップへ戻る、右上：ハンバーガー -->
+  <div class="header-icons">
+    <div class="back-arrow" onclick="window.scrollTo({ top: 0, behavior: 'smooth' })">↑</div>
+
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+
+  <!-- ハンバーガーメニュー -->
+  <nav class="menu" id="menu">
+    <ul>
+      <li><a href="#profile">プロフィール</a></li>
+      <li><a href="#works">作品一覧</a></li>
+      <li><a href="#contact">お問い合わせ</a></li>
+    </ul>
+  </nav>
+
+  <!-- メインコンテンツ -->
+  <main class="content">
+    <!-- Profile画像 -->
+    <div class="profile-image fadein">
+    <img src="profile.png" alt="プロフィール画像">
+    </div>
+
+
+    <!-- Hero セクション -->
+    <section class="hero fadein">
+      <h1 class="hero-title">Anon（宇都　杏音）</h1>
+      <p class="hero-copy">
+        宮崎県の工業高校出身、福岡歴は3年です。
+        昔から自分で何か形のあるものを制作することが好きです。<br>
+        Photoshop4年、illustrator2年の経験を生かして<br>
+        自身のデザインでサイトを作成したい思いからIT業界に挑戦しました。<br>
+        見てくださる方々の気分が上がるような作品をつくっていきたいです。
+      </p>
+    </section>
+
+    <!-- Profile セクション -->
+    <section class="profile fadein" id="profile">
+      <h2 class="section-title">Profile</h2>
+      <p class="profile-text">
+        名前：宇都　杏音<br>
+        年齢：25歳<br>
+        制作例　・illustratorでの看板のサインプラン制作<br>
+        　　　　・Photoshopを用いた空間パース画像制作<br>
+        　　　　<br>
+        <br>
+        　　　　  今までは、ディズニーホテルの内装の壁紙のデザインや、<br>
+        福岡のみずほペイペイドームの選手専用通路装飾データ作成にも携わってきました。<br>
+自分の関わったものが世に出て誰かの役に立つことにすごくやりがいを感じています。
+        <br>
+<br>
+<br>
+        制作スタイル：温かく、柔らかく、心地いい世界観が好きです。<br>
+      </p>
+    </section>
+
+    <!-- Works セクション -->
+    <section class="works fadein" id="works">
+      <h2 class="section-title">Website plan</h2>
+
+      <div class="work-item fadein">
+  <h3 class="work-title">Anon Cafe（Demo）</h3>
+
+  <div class="iframe-wrap">
+    <a href="https://ann081-onn.github.io/anon-cafe/" 
+       target="_blank" 
+       class="iframe-link"></a>
+
+    <iframe 
+      src="https://ann081-onn.github.io/anon-cafe/" 
+      class="work-iframe">
+    </iframe>
+  </div>
+
+  <p class="work-desc">
+    私がデザイン・制作したカフェサイトのデモです。<br>
+    クリックすると実際のサイトが開きます。
+  </p>
+</div>
+
+<div class="work-item fadein">
+  <h3 class="work-title">Fashion Site（Demo）</h3>
+
+  <div class="iframe-wrap">
+    <a href="https://ann081-onn.github.io/fashion-site/" 
+       target="_blank" 
+       class="iframe-link"></a>
+
+    <iframe 
+      src="https://ann081-onn.github.io/fashion-site/" 
+      class="work-iframe">
+    </iframe>
+  </div>
+
+  <p class="work-desc">
+    私がデザイン・制作したファッションサイトのデモです。<br>
+    クリックすると実際のサイトが開きます。
+  </p>
+</div>
+
+
+
+    </section>
+
+    <!-- Contact セクション -->
+<section class="contact" id="contact">
+
+      <h2 class="section-title">Contact</h2>
+      <p class="contact-text">
+        
+        Mail：anon01081@icloud.com<br>
+      </p>
+    </section>
+
+  </main>
+
+  <div class="bottom-space"></div>
+
+
+  <!-- JS -->
+  <script src="home.js"></script>
+
+  <!-- スクロールアニメーション -->
+  <script>
+    const fadeElems = document.querySelectorAll('.fadein');
+
+    const fadeInOnScroll = () => {
+      fadeElems.forEach(elem => {
+        const rect = elem.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 100) {
+          elem.classList.add('show');
+        }
+      });
+    };
+
+    window.addEventListener('scroll', fadeInOnScroll);
+    window.addEventListener('load', fadeInOnScroll);
+  </script>
+
+</body>
+</html>
